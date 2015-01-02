@@ -1,0 +1,22 @@
+<template name="layout">
+
+<head>
+	<title>Productivuybe</title>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<script src="countdown.js"></script>
+	</head>
+	
+	<div class="ui grid">
+		<div class="one wide column">{{>loginButtons}}</div>
+{{#if currentUser}}
+
+		<div class="header fifteen wide column">{{>header}}</div>
+
+		<div class="calendar three wide column">{{>calendar}}</div>
+		<div class="main ten wide column">{{>yield}}</div>
+		<div class="stats three wide column">stats here</div>
+{{/if}}
+	</div>
+
+</template>
+

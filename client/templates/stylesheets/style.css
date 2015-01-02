@@ -1,0 +1,65 @@
+/* CSS declarations go here */
+
+*
+{
+    font-family: 'Open Sans', sans-serif;
+
+    list-style: none;
+    box-sizing: border-box;
+
+
+}
+body{
+	background: white;
+}
+ul{
+	margin: 0px;
+	padding: 0px;
+}
+ul.centerCalendar li{
+	text-align: center;
+}
+
+body > div.ui.grid > div.header.fifteen.wide.column > header > h1 > a{
+	color: black;
+}
+
+h1, h2{
+text-align: center;
+text-decoration: none;
+color: black;
+}
+a:hover{
+    text-decoration: none;
+}
+
+.header{
+	background: #ccc;
+}
+
+.calendar{
+	background: #f0f0f0;
+}
+.main{
+	background: #f0f0f0;
+}
+.workingOn{
+	width: 100%;
+}
+.stats{
+	background: #c0c0c0;
+}
+.lastBreak{
+	width: 100%;
+}
+
+
+ul.questions li{
+	padding: 7px 0px 7px 0px;
+	font-size: 20px;
+}
+
+
+
+
+

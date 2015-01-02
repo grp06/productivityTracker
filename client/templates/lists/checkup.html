@@ -1,0 +1,213 @@
+<template name="checkup">
+
+{{#if currentUser}}
+
+
+<ul class="questions">
+
+	<li><input class="workingOn" placeholder="What are you working on?" /></li>
+
+
+<li>
+
+How productive do you feel:
+<select class="workProd">
+<option selected disabled>Select One:</option>
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5</option>
+<option>6</option>
+<option>7</option>
+<option>8</option>
+<option>9</option>
+<option>10</option>
+</select>
+
+</li>
+
+<li>
+
+Is your focus correct?
+<select class="focus">
+<option selected disabled>Select One:</option>
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5</option>
+<option>6</option>
+<option>7</option>
+<option>8</option>
+<option>9</option>
+<option>10</option>
+</select>
+
+</li>
+
+<li>
+
+How is your posture?
+<select class="posture">
+<option selected disabled>Select One:</option>
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5</option>
+<option>6</option>
+<option>7</option>
+<option>8</option>
+<option>9</option>
+<option>10</option>
+</select>
+
+</li>
+
+<li>
+
+Describe Your Mood:
+<select class="mood">
+<option selected disabled>Choose a Mood</option>
+<optgroup label="Positive Moods">
+<option>calm</option>
+<option>confident</option>
+<option>euphoric</option>
+<option>excited</option>
+<option>happy</option>
+<option>introspective</option>
+<option>nostalgic</option>
+<option>motivated</option>
+<option>optimistic</option>
+<option>proud</option>
+<option>reflective</option>
+<option>relaxed</option>
+<option>scholarly</option>
+<option>serene</option>
+<option>silly</option>
+<option>proud</option>
+<option>straightforward</option>
+</optgroup>
+<optgroup label="Neutral Moods">
+<option>impartial</option>
+<option>meditative</option>
+<option>objective</option>
+<option>questioning</option>
+<option>speculative</option>
+
+</optgroup>
+<optgroup label="Negative Moods">
+<option>angry</option>
+<option>annoyed</option>
+<option>anxious</option>
+<option>apathetic</option>
+<option>confused</option>
+<option>cynical</option>
+<option>disappointed</option>
+<option>fearful</option>
+<option>frantic</option>
+<option>frustrated</option>
+<option>impatient</option>
+<option>indecisive</option>
+<option>lethargic</option>
+<option>pessimistic</option>
+<option>self-deprecating</option>
+<option>stressed</option>
+<option>uncertain</option>
+<option>tense</option>
+
+</optgroup>
+</select>
+
+<select class="mood2">
+<option selected disabled>Choose a Mood</option>
+<optgroup label="Positive Moods">
+<option>calm</option>
+<option>confident</option>
+<option>euphoric</option>
+<option>excited</option>
+<option>happy</option>
+<option>introspective</option>
+<option>nostalgic</option>
+<option>motivated</option>
+<option>optimistic</option>
+<option>proud</option>
+<option>reflective</option>
+<option>relaxed</option>
+<option>scholarly</option>
+<option>serene</option>
+<option>silly</option>
+<option>proud</option>
+<option>straightforward</option>
+</optgroup>
+<optgroup label="Neutral Moods">
+<option>impartial</option>
+<option>meditative</option>
+<option>objective</option>
+<option>questioning</option>
+<option>speculative</option>
+
+</optgroup>
+<optgroup label="Negative Moods">
+<option>angry</option>
+<option>annoyed</option>
+<option>anxious</option>
+<option>apathetic</option>
+<option>confused</option>
+<option>cynical</option>
+<option>disappointed</option>
+<option>fearful</option>
+<option>frantic</option>
+<option>frustrated</option>
+<option>impatient</option>
+<option>indecisive</option>
+<option>lethargic</option>
+<option>pessimistic</option>
+<option>self-deprecating</option>
+<option>stressed</option>
+<option>uncertain</option>
+<option>tense</option>
+
+</optgroup>
+</select>
+
+
+
+
+</li>
+
+<li>
+
+<input class="lastBreak" placeholder="How long ago was your last break? (in minutes)" />
+
+</li>
+<li>
+
+Rate the amount of negative thoughts:
+<select class="negThoughts">
+<option selected disabled>Select One:</option>
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5</option>
+<option>6</option>
+<option>7</option>
+<option>8</option>
+<option>9</option>
+<option>10</option>
+</select>
+
+</li>
+
+</ul>
+
+<button class="submitCheckup" type="submit"> Submit </button>
+<br />
+
+
+
+
+{{/if}}
+</template>
