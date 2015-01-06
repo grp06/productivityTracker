@@ -1,5 +1,23 @@
 <template name="checkupData">
 	
-	data goes here
+
+<div class='sixteen wide column'>
+	{{#each returnAllData}}
+	<div id="dataPoint">
+
+	<span class="createdAt">{{createdAt}}</span> <br />
+	<div class="dataStyle">
+	Working on: {{workingOn}} <br />
+	Productivity: {{workProd}} <br />
+	Proper Focus: {{focus}} <br />
+	Posture: {{posture}} <br />
+	Negative Thoughts: {{negThoughts}} <br />
+	Mood: {{mood}}
+	</div>
+	</div>
+
+	{{/each}}
+
+</div>
 
 </template>

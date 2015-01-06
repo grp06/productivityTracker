@@ -11,7 +11,6 @@
 </div>
 
 <button class="start"> Start </button>
-<button class="check"> check </button>
 
 
 
@@ -28,23 +27,36 @@ of all my checkup data from that day
 When I click december 31, make a DB query 
 show all documents where field matches dec31
 
-Make a template that holds db data
+*Each date in the left side bar needs to correlate to the actual date
 
-Every time we click a new page, we need to check if 
-now < next... if yes > setTimeout
+*All Data needs to include all checkins
 
-when you click start
+***setTimeout needs to persist through a page refresh
+		store date for 'pressed start' then *doSomething 1200000ms later
+			try this first
+		jobs package
+
+
+
+localstorage
+	when you press start, set a variable to "now"
+	set "nextSurvey" to now + 3000
+
+	use sessions and localStorage
+
+	when I click submit set a session that causes a false
 	
-
-
-
-
-
-
-
-
-
-
+            if(expire === false){
+                return false
+            } else if(expire < Date.now()){
+                return true
+            } else if(next === null){
+                return false
+            } else if(now > next){
+                return true
+            } else {
+                return false
+            }
 
 
 -->

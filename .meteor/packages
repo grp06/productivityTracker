@@ -16,3 +16,5 @@ momentjs:moment
 aldeed:template-extension
 
 npm-container
+meteorhacks:async
+msavin:sessioninspector
