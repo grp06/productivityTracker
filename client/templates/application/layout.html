@@ -7,10 +7,10 @@
 	</head>
 	
 	<div class="ui grid">
-		<div class="one wide column">{{>loginButtons}}</div>
-{{#if currentUser}}
 
-		<div class="header fifteen wide column">{{>header}}</div>
+{{#if currentUser}}
+	  {{> nav}}
+
 
 		<div class="calendar three wide column">{{>calendar}}</div>
 		<div class="main ten wide column">{{>yield}}</div>

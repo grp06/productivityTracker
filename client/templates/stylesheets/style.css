@@ -30,7 +30,7 @@ body > div.ui.grid > div.header.fifteen.wide.column > header > h1 > a{
 margin-left: 90px;
 }
 
-h1, h2{
+h1, h2, h3{
 text-align: center;
 text-decoration: none;
 color: black;
@@ -39,21 +39,23 @@ a:hover{
     text-decoration: none;
 }
 
+body > div.ui.center.aligned.three.column.stackable.page.grid > div{
+	margin-top: 20px;
+}
+
 .header{
 	background: #ccc;
 }
 
 .calendar{
+margin-top: 20px;
+}
 
-}
-.main{
-	background: #f0f0f0;
-}
 .workingOn{
 	width: 100%;
 }
 .stats{
-	background: #c0c0c0;
+margin-top: 20px;
 }
 .lastBreak{
 	width: 100%;
@@ -64,7 +66,7 @@ ul.questions li{
 	padding: 7px 0px 7px 0px;
 	font-size: 20px;
 }
-#dataPoint{
+.dataPoint{
 	background-color: white;
 	margin: 0px 0px 15px 0px;
 	border-radius: 3px;
@@ -73,6 +75,11 @@ ul.questions li{
 	border-right: 1px solid #ccc;
 	padding: 10px 10px 10px 10px;
 
+}
+
+.content{
+	margin-top: 20px;
+	
 }
 .createdAt{
 font-size: 20px;
@@ -85,6 +92,16 @@ font-size: 20px;
 	font-size: 18px;
 	font-weight: bold;
 }
+.deleteRecord{
 
+}
+.left{
+	background: green;
+}
 
-
+.center{
+	text-align: center;
+}
+.navigon{
+	margin-bottom: 100px;
+}

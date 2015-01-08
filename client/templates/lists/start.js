@@ -2,6 +2,10 @@ Checkup = new Meteor.Collection("checkup");
 
 if (Meteor.isClient) {
 
+    
+
+
+
     //returns true if the timer is expired
     //used to display the checkup template
     Template.start.helpers({
@@ -13,8 +17,8 @@ if (Meteor.isClient) {
             if (expiresAt === undefined) {
                 expiresAt = false;
             }
-            console.log("expiresAt = " + expiresAt);
-            console.log("next = " + next)
+            //console.log("expiresAt = " + expiresAt);
+            //console.log("next = " + next)
 
             
             if (now > next){
@@ -29,7 +33,7 @@ if (Meteor.isClient) {
                 return false
             }  
 
-            console.log("next = " + next)
+            //console.log("next = " + next)
 
 
 
@@ -79,6 +83,11 @@ if (Meteor.isClient) {
             var lastBreak = $('.lastBreak').val();
             var negThoughts = $('.negThoughts').val();
             var createdAt = moment().format('MMMM Do YYYY, h:mm:ss a');
+            var day = moment().format('MMMM Do');
+            var lastBreak = $('.lastBreak').val();
+
+            var month = moment().format('MMMM');
+
             $('.start').prop("disabled", false);
             localStorage.setItem('nextReminder', 9999999999999999);
 
@@ -104,7 +113,10 @@ if (Meteor.isClient) {
                     posture: posture,
                     mood: mood,
                     negThoughts: negThoughts,
-                    createdAt: createdAt
+                    createdAt: createdAt,
+                    month: month,
+                    day: day,
+                    lastBreak: lastBreak
 
                 }, Session.set('expiresAt', false));
 

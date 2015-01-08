@@ -1,9 +1,9 @@
 <template name="checkupData">
-	
 
-<div class='sixteen wide column'>
-	{{#each returnAllData}}
-	<div id="dataPoint">
+<div class="sixteen wide column">
+
+	{{#each returnDateData}}
+	<div class="dataPoint">
 
 	<span class="createdAt">{{createdAt}}</span> <br />
 	<div class="dataStyle">
@@ -14,10 +14,14 @@
 	Negative Thoughts: {{negThoughts}} <br />
 	Mood: {{mood}}
 	</div>
+	<br />
+		<button class="deleteRecord">Delete</button>
+
 	</div>
 
 	{{/each}}
 
 </div>
-
 </template>
+
+

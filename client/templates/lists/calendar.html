@@ -1,30 +1,19 @@
 <template name="calendar">
 
-<span class="allData"> <a href="#">All Data</a> </span>
+{{#if currentUser}}
 
-	<h2>January</h2>
+<div class='calendar two wide column'>
+<p class='center'><a href="#"> Show All Data</a></p>
+
+<h3>January</h3>
 
 	<ul class="centerCalendar">
-
+	{{#each returnDates}}
 		<li>
-			<a href="{{pathFor "checkupData"}}">January 5</a>
+			<a href="{{pathFor "checkupData"}}">{{this}}</a>
 		</li>
-		<li>
-			<a href="#">January 6</a>
-		</li>
-		<li>
-			<a href="#">January 7</a>
-		</li>
-		<li>
-			<a href="#">January 8</a>
-		</li>
-		<li>
-			<a href="#">January 9</a>
-		</li>
-		<li>
-			<a href="#">January 10</a>
-		</li>
-
+			{{/each}}		
 	</ul>
-
+</div>
+{{/if}}
 </template>

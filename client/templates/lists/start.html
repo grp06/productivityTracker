@@ -1,21 +1,19 @@
 <template name="start">
-{{#if currentUser}}
-
-
+<div class="content six wide column">
 {{#if showCheckup}}
-	{{>checkup}}
+<div class="dataPoint">
+    {{>checkup}}
+</div>
 {{/if}}
 
 <div id="timer">
     <p> <span></span></p>
 </div>
 
-<button class="start"> Start </button>
+<button class="start"> Start Time Block </button>
 
 
-
-{{/if}}
-
+</div>
 </template>
 
 
@@ -32,20 +30,23 @@ show all documents where field matches dec31
 *All Data needs to include all checkins
 
 ***setTimeout needs to persist through a page refresh
-		store date for 'pressed start' then *doSomething 1200000ms later
-			try this first
-		jobs package
+        store date for 'pressed start' then *doSomething 1200000ms later
+            try this first
+        jobs package
+**When I submit a new date to the system, it should add it to the sidebar
+When I click a specific date, it should show only those dates
+        
 
 
 
 localstorage
-	when you press start, set a variable to "now"
-	set "nextSurvey" to now + 3000
+    when you press start, set a variable to "now"
+    set "nextSurvey" to now + 3000
 
-	use sessions and localStorage
+    use sessions and localStorage
 
-	when I click submit set a session that causes a false
-	
+    when I click submit set a session that causes a false
+
             if(expire === false){
                 return false
             } else if(expire < Date.now()){
