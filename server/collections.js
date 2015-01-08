@@ -1,5 +1,10 @@
 Checkup = new Meteor.Collection("checkup");
 
+/*
+//This is how I went about setting a timeout on the server.
+//I think I still had a problem with persisting through a page refresh.
+//Cool stuff anyway
+
 //declare a simple async function
 		function delayedMessge(callback) {
 		    Meteor.setTimeout(function() {
@@ -20,3 +25,4 @@ Checkup = new Meteor.Collection("checkup");
 		    }
 		});
 
+*/

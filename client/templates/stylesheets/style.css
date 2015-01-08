@@ -16,10 +16,42 @@ ul{
 	margin: 0px;
 	padding: 0px;
 }
-ul.centerCalendar li{
+
+
+
+.calendarStyle{
+	background: white;
 	text-align: center;
-	padding: 0px 0px 5px 0px;
+	box-shadow: 0px 3px 0px #aaa;
+	border-left: 1px solid #ccc ;
+	border-right: 1px solid #ccc;
+	border-radius: 3px;
+	width: 90%;
 	font-size: 18px;
+	margin-left: 10%;
+	padding: 10px 0px 10px 0px;
+
+
+
+}
+
+.statsStyle{
+	background: white;
+	padding: 10px;
+	width: 90%;
+	border-radius: 3px;
+	box-shadow: 0px 3px 0px #aaa;
+	border-left: 1px solid #ccc ;
+	border-right: 1px solid #ccc;
+
+}
+.centerMonth{
+	font-size: 20px;
+}
+.someSpace {
+background: white;
+padding: 10px;
+font-size: 25px;	
 }
 
 body > div.ui.grid > div.header.fifteen.wide.column > header > h1 > a{
@@ -43,12 +75,16 @@ body > div.ui.center.aligned.three.column.stackable.page.grid > div{
 	margin-top: 20px;
 }
 
+body > div.ui.grid > div.main.ten.wide.column > div{
+	margin-top: 20px;
+}
+
 .header{
 	background: #ccc;
 }
 
 .calendar{
-margin-top: 20px;
+margin-top: 10px;
 }
 
 .cud{
@@ -60,17 +96,20 @@ margin-top: 20px;
 	width: 100%;
 }
 .stats{
-margin-top: 20px;
+margin-top: 10px;
 }
 .lastBreak{
 	width: 100%;
 }
 
-
-ul.questions li{
-	padding: 7px 0px 7px 0px;
-	font-size: 20px;
+.questions{
+	padding: 0% 10% 1% 10% ;
 }
+.questions li{
+	padding: 5px;
+}
+
+
 .dataPoint{
 	background-color: white;
 	margin: 0px 0px 15px 0px;
@@ -79,10 +118,24 @@ ul.questions li{
 	border-left: 1px solid #ccc ;
 	border-right: 1px solid #ccc;
 	padding: 10px 10px 10px 10px;
+	font-size: 16px;
 
 }
-.right{
-	height: auto;
+.checkupOne{
+	width: 100%;
+}
+.submitCheckup{
+	width: 100%;
+}
+.at-form{
+	margin-top: 20px;
+}
+.ui.input{
+	width: 100%;
+}
+.pause{
+	font-size: 25px;
+text-align: center;
 }
 
 .content{

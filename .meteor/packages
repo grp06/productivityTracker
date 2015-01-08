@@ -21,3 +21,9 @@ msavin:sessioninspector
 
 
 zimme:iron-router-active
+useraccounts:semantic-ui
+useraccounts:core
+
+service-configuration
+accounts-facebook
+accounts-google

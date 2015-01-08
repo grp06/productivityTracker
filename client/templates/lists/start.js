@@ -2,9 +2,13 @@ Checkup = new Meteor.Collection("checkup");
 
 if (Meteor.isClient) {
 
-    
 
 
+    Template.start.rendered = function () {
+        if(Session.get('dateText') === null || Session.get('dateText') === undefined ){
+            Session.set('dateText', 'January 8th');
+        }
+    };
 
     //returns true if the timer is expired
     //used to display the checkup template
@@ -38,32 +42,83 @@ if (Meteor.isClient) {
 
 
 
+        },
+        nextUpdate: function(){
+           
+            if(Session.get('nextUpdate')){
+                return Session.get('nextUpdate')
+            } else
+            return localStorage.getItem('nextUpdate');
+
+        },
+        showButton: function(){
+            var now = Date.now();
+            var next = localStorage.getItem('nextReminder');
+            var expiresAt = Session.get('expiresAt');
+            var show = expiresAt - now;
+            if (now > next){
+                console.log('hideButton');
+                return true
+            } else if(now > next && expiresAt === false){
+                console.log('show1')
+                return false
+            } else if (next === null){
+                console.log('show2')
+                return false
+            }  
         }
     })
 
-    
+
+Template.button.helpers({
+
+        nextUpdate: function(){
+           
+            if(Session.get('nextUpdate')){
+                return Session.get('nextUpdate')
+            } else
+            return localStorage.getItem('nextUpdate');
+
+        }
+    })
+
+
 
     Template.start.events({
+
 
 
         //when I press start, a server-side method runs with a setTimeout
         //when that setTimeout expires
         //and template will show
         'click .start': function() {
-            $('.start').prop("disabled", true);
 
             /*
             Meteor.call('abc', function(error, response){
                 var timeup = response
                 Session.set('done', timeup)
             });
-*/
+*/              $('button').prop("disabled", true);
 
-            var next = Date.now() + 3000;
+ 
+        var nextUpdate = moment().add(1, 'second').format('h:mm:ss a');
+        console.log(nextUpdate)
+        localStorage.setItem('nextUpdate', nextUpdate);
+        Session.set('nextUpdate', nextUpdate);
+
+
+            //localStorage.setItem('nextUpdate', nextUpdate);
+
+            var next = Date.now() + 1000;
             localStorage.setItem('nextReminder', next);
+  
+
+
             Meteor.setTimeout(function() {
                 Session.set('expiresAt', true);
-            }, 3000);
+            }, 1000);
+
+
 
             //console.log(Date.now());
             //console.log(localStorage.getItem('nextReminder'));
@@ -90,6 +145,8 @@ if (Meteor.isClient) {
 
             $('.start').prop("disabled", false);
             localStorage.setItem('nextReminder', 9999999999999999);
+
+
 
 
 

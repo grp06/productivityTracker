@@ -4,7 +4,15 @@ if (Meteor.isClient) {
     Template.checkupData.helpers({
         returnDateData: function(){
             var tago = Session.get("dateText");
-            return Checkup.find({day: {$in: [tago] }})        },
+            
+
+            if( tago === null || tago === undefined ){
+            	Session.set('dateText', 'January 8th')
+ 			} else {
+           	return Checkup.find({day: {$in: [tago] }}, {sort: {createdAt: -1}})
+
+ 			}
+           },
         returnDates: function () {
             var checkup = Checkup.find({}).fetch()
 
@@ -13,23 +21,28 @@ if (Meteor.isClient) {
                     .flatten()
                     .uniq().compact().value();
 
-                    return dates
+    					return dates
         }
-      
    
     })
 
 
     Template.checkupData.events({
-        'click .deleteRecord': function(){
 
-        },
         'mouseenter .dataStyle': function(){
             Session.set('recordId', this._id);
             console.log(this._id)
         },
         'click .deleteRecord': function(){
-            Checkup.remove({_id: Session.get('recordId')}, console.log('removed ' + Session.get('recordId')));
+			var confirmDelete = confirm("Are you sure you want to delete this checkup?");
+			if ( confirmDelete == true) {
+			 	Checkup.remove({_id: Session.get('recordId')}, console.log('removed ' + Session.get('recordId')));
+
+			} else {
+			    console.log('Phew, That was close ');
+			}
+
+
         }
     })
 

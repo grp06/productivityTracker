@@ -3,17 +3,21 @@
 {{#if currentUser}}
 
 <div class='calendar two wide column'>
-<p class='center'><a href="#"> Show All Data</a></p>
 
-<h3>January</h3>
+<div class="calendarStyle">
 
-	<ul class="centerCalendar">
+
+	<ul>
+
+<span class="centerMonth">January</span>
+
 	{{#each returnDates}}
 		<li>
 			<a href="{{pathFor "checkupData"}}">{{this}}</a>
 		</li>
 			{{/each}}		
 	</ul>
+</div>
 </div>
 {{/if}}
 </template>

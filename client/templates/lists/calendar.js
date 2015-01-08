@@ -1,5 +1,7 @@
 if (Meteor.isClient) {
 
+
+
     Template.calendar.helpers({
 
         returnDates: function() {
@@ -21,6 +23,11 @@ if (Meteor.isClient) {
             Session.set('dateText', dateText);
             var format = (Session.get('dateText'));
             console.log(format);
+        },
+        'click a': function(e) {
+            var dateText = $(e.target).text();
+            Session.set('dateText', dateText);
+
         }
     })
 

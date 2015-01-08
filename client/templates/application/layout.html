@@ -8,14 +8,12 @@
 	
 	<div class="ui grid">
 
-{{#if currentUser}}
 	  {{> nav}}
 
 
 		<div class="calendar three wide column">{{>calendar}}</div>
 		<div class="main ten wide column">{{>yield}}</div>
 		<div class="stats three wide column">{{>stats}}</div>
-{{/if}}
 	</div>
 
 </template>

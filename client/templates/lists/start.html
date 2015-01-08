@@ -1,22 +1,35 @@
 <template name="start">
 <div class="content six wide column">
+
+
 {{#if showCheckup}}
 <div class="dataPoint">
     {{>checkup}}
 </div>
+
+{{else}}
+
+{{>button}}
 {{/if}}
 
-<div id="timer">
-    <p> <span></span></p>
-</div>
 
-<button class="start"> Start Time Block </button>
+
+
 
 
 </div>
 </template>
 
+<template name="button">
 
+<div class="someSpace"> 
+
+<p> Your next checkup will be at: {{nextUpdate}}</p> 
+
+<button class="start positive massive ui button"> Start Time Block </button>
+</div>
+
+</template>
 <!--
 
 when I click "december 31" I need to get a display
