@@ -1,23 +1,14 @@
 <template name="calendar">
-
-{{#if currentUser}}
-
-<div class='calendar two wide column'>
-
-<div class="calendarStyle">
-
-
-	<ul>
-
-<span class="centerMonth">January</span>
-
-	{{#each returnDates}}
-		<li>
-			<a href="{{pathFor "checkupData"}}">{{this}}</a>
-		</li>
-			{{/each}}		
-	</ul>
-</div>
-</div>
-{{/if}}
+	{{#if currentUser}}
+	<div class="calendarStyle ui segment">
+		<h3>January</h3>
+		<ul>
+			{{#each returnDates}}
+			<li>
+				<a href="{{pathFor "checkupData"}}">{{this}}</a>
+			</li>
+			{{/each}}
+		</ul>
+	</div>
+	{{/if}}
 </template>

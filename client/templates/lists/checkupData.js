@@ -11,7 +11,7 @@ if (Meteor.isClient) {
             if( tago === null || tago === undefined ){
             	Session.set('dateText', 'January 8th')
  			} else {
- 				     return Checkup.find({}, {sort: {createdAt: -1}, fields: {workingOn: 0}})
+ 				     return Checkup.find({day: {$in: [tago] }, createdBy: currentUserId }, {sort: {createdAt: -1}})
  				     
 
  			}

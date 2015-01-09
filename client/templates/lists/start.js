@@ -140,9 +140,19 @@ if (Meteor.isClient) {
         //into the database
         'click .submitCheckup': function() {
             var mood = [];
+            if ($('.mood1 .selected').text()){
             mood.push($('.mood1 .selected').text());
+
+            }
+                        if ($('.mood2 .selected').text()){
             mood.push($('.mood2 .selected').text());
+
+            }
+                        if ($('.mood3 .selected').text()){
             mood.push($('.mood3 .selected').text());
+
+            }
+
             var workingOn = $('.workingOn').val();
             var workProd = $('.workProd').val();
             var focus = $('.focus').val();

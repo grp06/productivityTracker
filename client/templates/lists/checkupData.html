@@ -1,30 +1,43 @@
 <template name="checkupData">
-
-<div class="cud sixteen wide column">
-
-	{{#each returnDateData}}
-	<div class="dataPoint">
-
-	<span class="createdAt">{{createdAt}}</span> <br />
-	<div class="dataStyle">
 	
-	Mood: {{mood}}<br />
-	Working on: {{workingOn}} <br />
-	Productivity: {{workProd}} <br />
-	Proper Focus: {{focus}} <br />
-	Posture: {{posture}} <br />
-	Negative Thoughts: {{negThoughts}} <br />
+
 	
-	<br />
-		<button class="deleteRecord mini ui button">Delete</button>
+	<div class="ui two column stackable grid">
+	
+			{{#each returnDateData}}
+			<div class="column">
+
+			<div class="dataPoint ui segment">
+
+				<span class="createdAt">{{createdAt}}</span>
+				<br />
+	
+				<div class="dataStyle">
+					<br />
+					Mood: <span class="bold">{{mood}}</span>
+					<br />
+					Working on: <span class="bold">{{workingOn}}</span>
+					<br />
+					Productivity: <span class="bold">{{workProd}}</span>
+					<br />
+					Proper Focus: <span class="bold">{{focus}}</span>
+					<br />
+					Posture: <span class="bold">{{posture}}</span>
+					<br />
+					Negative Thoughts: <span class="bold">{{negThoughts}}</span>
+					<br />
+
+					<br />
+				
+					<button class="deleteRecord mini ui red button">Delete</button>
+
+				</div>
+			</div>
+		</div>
+			{{/each}}
+
+
+
 
 	</div>
-	</div>
-
-	{{/each}}
-
-
-</div>
 </template>
-
-

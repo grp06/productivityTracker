@@ -3,18 +3,19 @@
 <head>
 	<title>Productivuybe</title>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-	<script src="countdown.js"></script>
 	</head>
 	
-	<div class="ui grid">
+<div class="ui grid">
 
 	  {{> nav}}
 
+</div>
 
-		<div class="calendar three wide column">{{>calendar}}</div>
-		<div class="main ten wide column">{{>yield}}</div>
-		<div class="stats three wide column">{{>stats}}</div>
-	</div>
+<div class="ui page grid">
+		<div class="space three wide column">{{>calendar}}</div>
+		<div class="space ten wide column">{{>yield}}</div>
+		<div class="space three wide column">{{>stats}}</div>
+</div>
 
 </template>
 
