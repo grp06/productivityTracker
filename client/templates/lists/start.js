@@ -1,6 +1,12 @@
+Meteor.subscribe("checkup");
+
 Checkup = new Meteor.Collection("checkup");
 
+
 if (Meteor.isClient) {
+
+
+
 
 
 
@@ -85,7 +91,11 @@ Template.button.helpers({
 
 
     Template.start.events({
+        'click .now': function(){
+            Session.set('expiresAt', true)
+            localStorage.setItem('nextReminder', 0);
 
+        },
 
 
         //when I press start, a server-side method runs with a setTimeout
@@ -101,6 +111,8 @@ Template.button.helpers({
 */              $('button').prop("disabled", true);
 
  
+
+
         var nextUpdate = moment().add(1, 'second').format('h:mm:ss a');
         console.log(nextUpdate)
         localStorage.setItem('nextUpdate', nextUpdate);
@@ -181,6 +193,14 @@ Template.button.helpers({
 
 
 
+        },
+        'click .cancel': function(){
+
+            localStorage.setItem('nextReminder', null);
+            localStorage.setItem('nextUpdate', null);
+            Session.set('expiresAt', false)
+            console.log('null')
+        
         }
 
     })

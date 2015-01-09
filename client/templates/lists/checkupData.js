@@ -34,6 +34,9 @@ if (Meteor.isClient) {
             console.log(this._id)
         },
         'click .deleteRecord': function(){
+			
+
+
 			var confirmDelete = confirm("Are you sure you want to delete this checkup?");
 			if ( confirmDelete == true) {
 			 	Checkup.remove({_id: Session.get('recordId')}, console.log('removed ' + Session.get('recordId')));

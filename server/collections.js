@@ -1,5 +1,11 @@
 Checkup = new Meteor.Collection("checkup");
 
+
+Meteor.publish('checkup', function () {
+  return Checkup.find({});
+})
+
+
 /*
 //This is how I went about setting a timeout on the server.
 //I think I still had a problem with persisting through a page refresh.

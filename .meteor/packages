@@ -4,8 +4,6 @@
 # but you can also edit it by hand.
 
 meteor-platform
-autopublish
-insecure
 iron:router
 mizzao:jquery-ui
 accounts-password
@@ -27,3 +25,4 @@ useraccounts:core
 service-configuration
 accounts-facebook
 accounts-google
+ongoworks:security

@@ -34,7 +34,19 @@ ul{
 
 
 }
+.now{
+		width: 50%;
 
+}
+.cancel{
+	width: 50%;
+}
+.now1{
+	margin-left: 25%;
+}
+.start1{
+	margin-left: 25%;
+}
 .statsStyle{
 	background: white;
 	padding: 10px;
@@ -50,8 +62,10 @@ ul{
 }
 .someSpace {
 background: white;
-padding: 10px;
-font-size: 25px;	
+padding-top: 10px;
+padding-bottom: 10px;
+
+font-size: 25px;
 }
 
 body > div.ui.grid > div.header.fifteen.wide.column > header > h1 > a{
