@@ -1,15 +1,25 @@
 // Set up login services
 Meteor.startup(function() {
     // Remove configuration entries in case service is already configured
-
+    ServiceConfiguration.configurations.remove({$or: [
+        {service: "facebook"},
+        {service: "github"},
+        {service: "google"},
+        {service: "linkedin"}
+    ]});
 
     
     //Add Facebook configuration entry
+
+    
     ServiceConfiguration.configurations.insert({
         "service": "facebook",
         "appId": "1532370840359110",
         "secret": "f99a7650973b5433a6586da1b87d1be3"
     });
+
+
+
 /*
     // Add GitHub configuration entry
     ServiceConfiguration.configurations.insert({

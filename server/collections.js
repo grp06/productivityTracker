@@ -1,7 +1,8 @@
 Checkup = new Meteor.Collection("checkup");
 
-
+//Publishing only the current user's records to the DB
 Meteor.publish('checkup', function () {
+	var currentUserId = Meteor.userId
   return Checkup.find({});
 })
 

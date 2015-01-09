@@ -1,16 +1,19 @@
-<template name="stats"> 
+<template name="stats">
+	{{#if currentUser}}
+	<div class="stats three wide column">
 
-{{#if currentUser}}
+		<div class="statsStyle">
 
+			<p class="totalCheckups">Total Checkups: {{returnStats}}</p>
+			Last Checkup:
+			<br />
+			{{#each returnLast}}
+			{{createdAt}}
+			{{/each}}
+			<br />
 
-<div class="stats three wide column">
-
-<div class="statsStyle">
-
-<p class="totalCheckups"> Total Checkups: {{returnStats}} </p>
-
-Last Checkup: <br />{{returnLast}}
-</div>
-</div>
-{{/if}}
+			
+		</div>
+	</div>
+	{{/if}}
 </template>

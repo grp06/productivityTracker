@@ -55,14 +55,6 @@ if (Meteor.isClient) {
 
 
         },
-        nextUpdate: function() {
-
-            if (Session.get('nextUpdate')) {
-                return Session.get('nextUpdate')
-            } else
-                return localStorage.getItem('nextUpdate');
-
-        },
         showButton: function() {
             var now = Date.now();
             var next = localStorage.getItem('nextReminder');
@@ -115,12 +107,12 @@ if (Meteor.isClient) {
                 Session.set('done', timeup)
             });
 */
-            $('button').prop("disabled", true);
+            $('.start').prop("disabled", true);
 
 
 
 
-            var nextUpdate = moment().add(1, 'second').format('h:mm:ss a');
+            var nextUpdate = moment().add(30, 'minutes').format('h:mm:ss a');
             console.log(nextUpdate)
             localStorage.setItem('nextUpdate', nextUpdate);
             Session.set('nextUpdate', nextUpdate);
@@ -128,14 +120,14 @@ if (Meteor.isClient) {
 
             //localStorage.setItem('nextUpdate', nextUpdate);
 
-            var next = Date.now() + 1000;
+            var next = Date.now() + 1800000;
             localStorage.setItem('nextReminder', next);
 
 
 
             Meteor.setTimeout(function() {
                 Session.set('expiresAt', true);
-            }, 1000);
+            }, 1800000);
 
 
 
@@ -161,6 +153,7 @@ if (Meteor.isClient) {
             var createdAt = moment().format('MMMM Do YYYY, h:mm:ss a');
             var day = moment().format('MMMM Do');
             var lastBreak = $('.lastBreak').val();
+            var currentUserId = Meteor.userId();
 
             var month = moment().format('MMMM');
 
@@ -195,7 +188,8 @@ if (Meteor.isClient) {
                     createdAt: createdAt,
                     month: month,
                     day: day,
-                    lastBreak: lastBreak
+                    lastBreak: lastBreak,
+                    createdBy: currentUserId
 
                 }, Session.set('expiresAt', false));
 
