@@ -6,12 +6,18 @@ Checkup = new Meteor.Collection("checkup");
 if (Meteor.isClient) {
 
 
+    Template.checkup.rendered = function() {
+        $('.dropdown')
+            .dropdown({
+                // you can use any ui transition
+                transition: 'drop'
+            });
+    };
 
 
 
-
-    Template.start.rendered = function () {
-        if(Session.get('dateText') === null || Session.get('dateText') === undefined ){
+    Template.start.rendered = function() {
+        if (Session.get('dateText') === null || Session.get('dateText') === undefined) {
             Session.set('dateText', 'January 8th');
         }
     };
@@ -30,18 +36,18 @@ if (Meteor.isClient) {
             //console.log("expiresAt = " + expiresAt);
             //console.log("next = " + next)
 
-            
-            if (now > next){
+
+            if (now > next) {
                 console.log('scenario 3');
                 next = 9999999999999999;
                 return true
-            } else if(now > next && expiresAt === false){
+            } else if (now > next && expiresAt === false) {
                 console.log('scenario 1')
                 return false
-            } else if (next === null){
+            } else if (next === null) {
                 console.log('scenario 2')
                 return false
-            }  
+            }
 
             //console.log("next = " + next)
 
@@ -49,41 +55,41 @@ if (Meteor.isClient) {
 
 
         },
-        nextUpdate: function(){
-           
-            if(Session.get('nextUpdate')){
+        nextUpdate: function() {
+
+            if (Session.get('nextUpdate')) {
                 return Session.get('nextUpdate')
             } else
-            return localStorage.getItem('nextUpdate');
+                return localStorage.getItem('nextUpdate');
 
         },
-        showButton: function(){
+        showButton: function() {
             var now = Date.now();
             var next = localStorage.getItem('nextReminder');
             var expiresAt = Session.get('expiresAt');
             var show = expiresAt - now;
-            if (now > next){
+            if (now > next) {
                 console.log('hideButton');
                 return true
-            } else if(now > next && expiresAt === false){
+            } else if (now > next && expiresAt === false) {
                 console.log('show1')
                 return false
-            } else if (next === null){
+            } else if (next === null) {
                 console.log('show2')
                 return false
-            }  
+            }
         }
     })
 
 
-Template.button.helpers({
+    Template.button.helpers({
 
-        nextUpdate: function(){
-           
-            if(Session.get('nextUpdate')){
+        nextUpdate: function() {
+
+            if (Session.get('nextUpdate')) {
                 return Session.get('nextUpdate')
             } else
-            return localStorage.getItem('nextUpdate');
+                return localStorage.getItem('nextUpdate');
 
         }
     })
@@ -91,7 +97,7 @@ Template.button.helpers({
 
 
     Template.start.events({
-        'click .now': function(){
+        'click .now': function() {
             Session.set('expiresAt', true)
             localStorage.setItem('nextReminder', 0);
 
@@ -108,22 +114,23 @@ Template.button.helpers({
                 var timeup = response
                 Session.set('done', timeup)
             });
-*/              $('button').prop("disabled", true);
+*/
+            $('button').prop("disabled", true);
 
- 
 
 
-        var nextUpdate = moment().add(1, 'second').format('h:mm:ss a');
-        console.log(nextUpdate)
-        localStorage.setItem('nextUpdate', nextUpdate);
-        Session.set('nextUpdate', nextUpdate);
+
+            var nextUpdate = moment().add(1, 'second').format('h:mm:ss a');
+            console.log(nextUpdate)
+            localStorage.setItem('nextUpdate', nextUpdate);
+            Session.set('nextUpdate', nextUpdate);
 
 
             //localStorage.setItem('nextUpdate', nextUpdate);
 
             var next = Date.now() + 1000;
             localStorage.setItem('nextReminder', next);
-  
+
 
 
             Meteor.setTimeout(function() {
@@ -140,13 +147,15 @@ Template.button.helpers({
         //when you click submit here, it takes all the form fields and inserts them
         //into the database
         'click .submitCheckup': function() {
+            var mood = [];
+            mood.push($('.mood1 .selected').text());
+            mood.push($('.mood2 .selected').text());
+            mood.push($('.mood3 .selected').text());
             var workingOn = $('.workingOn').val();
             var workProd = $('.workProd').val();
             var focus = $('.focus').val();
             var posture = $('.posture').val();
-            var mood = [];
-            mood.push($('.mood').val());
-            mood.push($('.mood2').val());
+            
             var lastBreak = $('.lastBreak').val();
             var negThoughts = $('.negThoughts').val();
             var createdAt = moment().format('MMMM Do YYYY, h:mm:ss a');
@@ -157,6 +166,8 @@ Template.button.helpers({
 
             $('.start').prop("disabled", false);
             localStorage.setItem('nextReminder', 9999999999999999);
+
+
 
 
 
@@ -174,7 +185,6 @@ Template.button.helpers({
             console.log(createdAt)
 */
 
-            if (mood != null) {
                 Checkup.insert({
                     workingOn: workingOn,
                     workProd: workProd,
@@ -189,18 +199,18 @@ Template.button.helpers({
 
                 }, Session.set('expiresAt', false));
 
-            } //here 
+             //here 
 
 
 
         },
-        'click .cancel': function(){
+        'click .cancel': function() {
 
             localStorage.setItem('nextReminder', null);
             localStorage.setItem('nextUpdate', null);
             Session.set('expiresAt', false)
-            console.log('null')
-        
+
+
         }
 
     })

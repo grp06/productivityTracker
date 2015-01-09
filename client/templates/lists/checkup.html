@@ -1,216 +1,143 @@
 <template name="checkup">
 
-	<p class='pause'>Pause for a moment and fill out the checkup</p>
+	<p class='pause'>Pause For A Moment And Fill Out The Checkup</p>
+<ul class="questions">
+<li>
+<span class='moodLeft'>
+	<div class="ui dropdown">
+		<div class="text">Positive Moods</div> <i class="dropdown icon"></i>
+		<div class="mood1 menu">
+			<div class="item">Calm</div>
+			<div class="item">Confident</div>
+			<div class="item">Euphoric</div>
+			<div class="item">Excited</div>
+			<div class="item">Happy</div>
+			<div class="item">Introspective</div>
+			<div class="item">Nostalgic</div>
+			<div class="item">Motivated</div>
+			<div class="item">Optimistic</div>
+			<div class="item">Proud</div>
+			<div class="item">Reflective</div>
+			<div class="item">Relaxed</div>
+			<div class="item">Scholarly</div>
+			<div class="item">Serene</div>
+			<div class="item">Silly</div>
+			<div class="item">Straightforward</div>
 
-	<ul class="questions">
+		</div>
+	</div>
+</span>
+<span class="moodMiddle">
 
-		<li>
-			<div class="ui input">
-				<input class="workingOn" type="text" placeholder="What are you working on?">
-			</div>
-			</li>
+	<div class="ui dropdown">
+		<div class="text">Neutral Moods</div> <i class="dropdown icon"></i>
+		<div class="mood2 menu">
+			<div class="item">Impartial</div>
+			<div class="item">Meditative</div>
+			<div class="item">Neutral</div>
+			<div class="item">Nothing</div>
+			<div class="item">Objective</div>
+			<div class="item">Questioning</div>
+			<div class="item">Speculative</div>
 
-				<li>
-					How productive do you feel:
-					<select class="workProd">
-						<option selected disabled>Select One:</option>
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-						<option>5</option>
-						<option>6</option>
-						<option>7</option>
-						<option>8</option>
-						<option>9</option>
-						<option>10</option>
-					</select>
+		</div>
+	</div>
+</span>
+<span class="moodRight">
 
-				</li>
 
-				<li>
-					Is your focus correct?
-					<select class="focus">
-						<option selected disabled>Select One:</option>
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-						<option>5</option>
-						<option>6</option>
-						<option>7</option>
-						<option>8</option>
-						<option>9</option>
-						<option>10</option>
-					</select>
+	<div class="ui dropdown">
+		<div class="text">Negative Moods</div>
+		<i class="dropdown icon"></i>
+		<div class="mood3 menu">
 
-				</li>
+			<div class="item">Angry</div>
+			<div class="item">Annoyed</div>
+			<div class="item">Anxious</div>
+			<div class="item">Apathetic</div>
+			<div class="item">Confused</div>
+			<div class="item">Cynical</div>
+			<div class="item">Disappointed</div>
+			<div class="item">Fearful</div>
+			<div class="item">Frantic</div>
+			<div class="item">Frustrated</div>
+			<div class="item">Impatient</div>
+			<div class="item">Indecisive</div>
+			<div class="item">Lethargic</div>
+			<div class="item">Pessimistic</div>
+			<div class="item">Self-Depricating</div>
+			<div class="item">Stressed</div>
+			<div class="item">Uncertain</div>
+			<div class="item">Tense</div>
 
-				<li>
-					How is your posture?
-					<select class="posture">
-						<option selected disabled>Select One:</option>
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-						<option>5</option>
-						<option>6</option>
-						<option>7</option>
-						<option>8</option>
-						<option>9</option>
-						<option>10</option>
-					</select>
+		</div>
+	</div>
+</span>
+</li>
+	<li>
 
-				</li>
+		<div class="ui icon input">
+			<input class="workingOn" type="text" placeholder="What Are You Working On?">
+			<i class="lightbulb icon"></i>
+		</div>
 
-				<li>
-					Describe Your Mood:
-					<select class="mood">
-						<option selected disabled>Choose a Mood</option>
-						<optgroup label="Positive Moods">
-							<option>calm</option>
-							<option>confident</option>
-							<option>euphoric</option>
-							<option>excited</option>
-							<option>happy</option>
-							<option>introspective</option>
-							<option>nostalgic</option>
-							<option>motivated</option>
-							<option>optimistic</option>
-							<option>proud</option>
-							<option>reflective</option>
-							<option>relaxed</option>
-							<option>scholarly</option>
-							<option>serene</option>
-							<option>silly</option>
-							<option>proud</option>
-							<option>straightforward</option>
-						</optgroup>
-						<optgroup label="Neutral Moods">
-							<option>impartial</option>
-							<option>meditative</option>
-							<option>neutral</option>
-							<option>objective</option>
-							<option>questioning</option>
-							<option>speculative</option>
+	</li>
+	<li>
 
-						</optgroup>
-						<optgroup label="Negative Moods">
-							<option>angry</option>
-							<option>annoyed</option>
-							<option>anxious</option>
-							<option>apathetic</option>
-							<option>confused</option>
-							<option>cynical</option>
-							<option>disappointed</option>
-							<option>fearful</option>
-							<option>frantic</option>
-							<option>frustrated</option>
-							<option>impatient</option>
-							<option>indecisive</option>
-							<option>lethargic</option>
-							<option>pessimistic</option>
-							<option>self-deprecating</option>
-							<option>stressed</option>
-							<option>uncertain</option>
-							<option>tense</option>
+		<div class="ui icon input">
+			<input class="workProd" type="text" placeholder="How Productive Do You Feel? (1-10)">
+			<i class="trophy icon"></i>
+		</div>
 
-						</optgroup>
-					</select>
+	</li>
+	<li>
 
-					<select class="mood2">
-						<option selected disabled>Choose a Mood</option>
-						<optgroup label="Positive Moods">
-							<option>calm</option>
-							<option>confident</option>
-							<option>euphoric</option>
-							<option>excited</option>
-							<option>happy</option>
-							<option>introspective</option>
-							<option>nostalgic</option>
-							<option>motivated</option>
-							<option>optimistic</option>
-							<option>proud</option>
-							<option>reflective</option>
-							<option>relaxed</option>
-							<option>scholarly</option>
-							<option>serene</option>
-							<option>silly</option>
-							<option>proud</option>
-							<option>straightforward</option>
-						</optgroup>
-						<optgroup label="Neutral Moods">
-							<option>impartial</option>
-							<option>meditative</option>
-							<option>neutral</option>
-							<option>objective</option>
-							<option>questioning</option>
-							<option>speculative</option>
+		<div class="ui icon input">
+			<input class="focus" type="text" placeholder="Are You Focusing on the Right Thing? (1-10)">
+			<i class="bullseye icon"></i>
+		</div>
 
-						</optgroup>
-						<optgroup label="Negative Moods">
-							<option>angry</option>
-							<option>annoyed</option>
-							<option>anxious</option>
-							<option>apathetic</option>
-							<option>confused</option>
-							<option>cynical</option>
-							<option>disappointed</option>
-							<option>fearful</option>
-							<option>frantic</option>
-							<option>frustrated</option>
-							<option>impatient</option>
-							<option>indecisive</option>
-							<option>lethargic</option>
-							<option>pessimistic</option>
-							<option>self-deprecating</option>
-							<option>stressed</option>
-							<option>uncertain</option>
-							<option>tense</option>
+	</li>
+	<li>
 
-						</optgroup>
-					</select>
+		<div class="ui icon input">
+			<input class="posture" type="text" placeholder="How is Your Posture? (1-10)">
+			<i class="arrow up icon"></i>
+		</div>
 
-				</li>
+	</li>
 
-				<li>
+	<li>
 
-			<div class="ui input">
-				<input class="lastBreak" type="text" placeholder="How long ago was your last break? (in minutes)">
-			</div>
+		<div class="ui icon input">
+			<input class="negThoughts" type="text" placeholder="Amount of Negative Thinking? (1-10)">
+			<i class="thumbs down icon"></i>
+		</div>
 
-			
+	</li>
 
-				</li>
-				<li>
-					Rate the amount of negative thoughts:
-					<select class="negThoughts">
-						<option selected disabled>Select One:</option>
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-						<option>5</option>
-						<option>6</option>
-						<option>7</option>
-						<option>8</option>
-						<option>9</option>
-						<option>10</option>
-					</select>
+	<li>
 
-				</li>
+		<div class="ui icon input">
+			<input class="lastBreak" type="text" placeholder="How Long Ago Was Your Last Break? (In Minutes)">
+			<i class="sun icon"></i>
+		</div>
 
-			</ul>
+	</li>
 
-			<div class="submitCheckup large ui primary button">Save</div>
 
-			  <div class="ui horizontal divider">
-    Or
-  </div>
+</ul>
 
-  <span class="now1"><button class="cancel ui red button"> Cancel </button></span>
+<span class="submitCheckup1">
+	<div class="submitCheckup large ui primary button">Save</div>
+</span>
 
-			<br />
+<div class="ui horizontal divider">Or</div>
 
-		</template>
+<span class="now1">
+	<button class="cancel ui red button">Cancel</button>
+</span>
+
+<br />
+
+</template>
