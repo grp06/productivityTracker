@@ -1,43 +1,60 @@
 <template name="checkupData">
-	
-
-	
+	{{#if noData}}
+			{{>noCheckupData}}
+			{{else}}
 	<div class="ui two column stackable grid">
-	
-			{{#each returnDateData}}
-			<div class="column">
+		{{#each returnDateData}}
+		<div class="column">
 
 			<div class="dataPoint ui segment">
 
 				<span class="createdAt">{{createdAt}}</span>
 				<br />
-	
+
 				<div class="dataStyle">
 					<br />
-					Mood: <span class="bold">{{mood}}</span>
+					Mood:
+					<span class="bold">{{mood}}</span>
 					<br />
-					Working on: <span class="bold">{{workingOn}}</span>
+					Working on:
+					<span class="bold">{{workingOn}}</span>
 					<br />
-					Productivity: <span class="bold">{{workProd}}</span>
+					Productivity:
+					<span class="bold">{{workProd}}</span>
 					<br />
-					Proper Focus: <span class="bold">{{focus}}</span>
+					Proper Focus:
+					<span class="bold">{{focus}}</span>
 					<br />
-					Posture: <span class="bold">{{posture}}</span>
+					Posture:
+					<span class="bold">{{posture}}</span>
 					<br />
-					Negative Thoughts: <span class="bold">{{negThoughts}}</span>
+					Negative Thoughts:
+					<span class="bold">{{negThoughts}}</span>
 					<br />
 
 					<br />
-				
+
 					<button class="deleteRecord mini ui red button">Delete</button>
 
 				</div>
 			</div>
 		</div>
-			{{/each}}
+		{{/each}}
+	</div>
+	{{/if}}
+</template>
+
+<template name="noCheckupData">
+
+	<div class="ui segment">
+		<h1> <i class="red warning sign icon"></i>
+			No Data To Display
+		</h1>
+
+		<h3>
+			    Go <a class="{{isActiveRoute regex='start'}} item" href="{{pathFor 'start'}}">Home</a> and Start a 30 Minute Time Block
 
 
-
-
+		</h3>
 	</div>
 </template>

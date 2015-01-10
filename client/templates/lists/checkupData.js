@@ -1,6 +1,7 @@
 if (Meteor.isClient) {
 
 
+
     Template.checkupData.helpers({
     	//This function populates the left 'calendar' sidebar
         returnDateData: function(){
@@ -25,6 +26,17 @@ if (Meteor.isClient) {
                     .uniq().compact().value();
 
     					return dates
+        },
+        noData: function(){
+            var currentUserId = Meteor.userId();
+            if(Checkup.find({}).count() !== 0){
+                console.log('false')
+                return false
+            } else {
+
+                console.log('true')
+                return true
+            }
         }
    
     })
@@ -53,3 +65,4 @@ if (Meteor.isClient) {
     })
 
 }
+

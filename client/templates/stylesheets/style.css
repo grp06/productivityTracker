@@ -17,13 +17,19 @@ ul{
 }
 h3{
 	margin: 0;
+	text-align: center;
+
+}
+h1, h2{
+	text-align: center;
+	margin:0;
 }
 
 .at-form{
 	min-width: 400px;
 }
 .ui.center.aligned.three.column.stackable.page.grid{
-	margin-left: -20%;
+	margin-left: -13%;
 }
 
 .calendarStyle.ui.segment{
@@ -43,7 +49,13 @@ h3{
 
 
 }
-
+.bullet{
+	font-size: 20px;
+	margin-top: 10px;
+}
+.ui.segment.cardss{
+	padding-left: 8%;
+}
 .space{
 	margin-top: 30px;
 }

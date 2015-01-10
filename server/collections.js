@@ -2,9 +2,11 @@ Checkup = new Meteor.Collection("checkup");
 
 //Publishing only the current user's records to the DB
 Meteor.publish('checkup', function () {
-	var currentUserId = Meteor.userId
-  return Checkup.find({});
+	var currentUserId = this.userId;
+  return Checkup.find({createdBy: currentUserId});
 })
+
+
 
 
 /*
@@ -32,4 +34,40 @@ Meteor.publish('checkup', function () {
 		    }
 		});
 
+*/
+
+//////////////////////I want to insert dummy data!
+/*
+if (Meteor.isServer) {
+  Meteor.startup(function () {
+    if (Checkup.find().count() === 0){
+    var currentUserId = this.userId;
+    var day = moment().format('MMMM Do');
+    var month = moment().format('MMMM');
+    var createdAt = moment().format('MMMM Do YYYY, h:mm:ss a');
+
+
+
+
+      var data = 
+                    {
+                    workingOn: "Example of what you worked on",
+                    workProd: '6',
+                    focus: '6',
+                    posture: '6',
+                    mood: '6',
+                    negThoughts: '6',
+                    createdAt: createdAt,
+                    month: '6',
+                    day: day,
+                    lastBreak: '6',
+                    createdBy: currentUserId
+                }
+      
+
+        Checkup.insert(data);
+      
+    }
+  });
+}
 */

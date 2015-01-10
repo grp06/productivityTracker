@@ -3,8 +3,11 @@
 
   <div class="ui fixed transparent inverted main menu">
     <div class="header item">Productivity Tracker</div>
+    
+{{#if currentUser}}
     <a class="{{isActiveRoute regex='start'}} item" href="{{pathFor 'start'}}">Home</a>
     <a class="{{isActiveRoute regex='checkupData'}} item" href="{{pathFor 'checkupData'}}">Checkup Data</a>
+    {{/if}}
     <div class="right menu">
       {{> atNavButton}}
     </div>

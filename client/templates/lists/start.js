@@ -17,8 +17,10 @@ if (Meteor.isClient) {
 
 
     Template.start.rendered = function() {
-        if (Session.get('dateText') === null || Session.get('dateText') === undefined) {
-            Session.set('dateText', 'January 8th');
+        var day = moment().format('MMMM Do');
+
+        if (!Session.get('dateText')) {
+            Session.set('dateText', 'day');
         }
     };
 

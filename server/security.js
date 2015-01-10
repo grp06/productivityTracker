@@ -14,3 +14,5 @@ Checkup.permit('remove').ifLoggedIn().apply();
 // update Checkup only if they don't try to change the `author` or `date` properties
 //Checkup.permit('update').ifHasRole('admin').apply();
 //Checkup.permit('update').ifLoggedIn().exceptProps(['author', 'date']).apply();
+
+
